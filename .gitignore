@@ -1,0 +1,18 @@
+# Project
+/dist
+/node_modules
+package-lock.json
+
+# Yarn
+yarn-error.log
+yarn.lock
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Mac
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
