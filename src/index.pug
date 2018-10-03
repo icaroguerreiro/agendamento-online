@@ -1,4 +1,4 @@
-extends html/templates/_default.pug
+extends html/templates/_just_modal.pug
 block head
   title Page Title
   meta(name='description' content='Page Description')
@@ -7,21 +7,51 @@ block script
 
 //- Content
 block content
-  .container
-    .row
-      .col-md-6.bg-danger
-        p <b>Usuário:</b> #{user.name}
-      .col-md-6.bg-warning.text-right
-        p <b>Idade:</b> #{user.age}
-
-  h1 Olá #{user.name}
-  +bloco('bloco-borderless', 'http://google.com', 'Google', 'R$ 20.278,50')
-  +bloco('bloco-borderless', 'http://skype.com', 'Skype', 'R$ 1,00')
-
-  ul
-    - const menus = [["Home", "index.html"],["Quem Somos", "sobre.html"],["Contato", "contato.html"]]
-      each menu, i in menus
-        li
-          a(href= menu[1] ) #{menu[0]}
-      else
-        p No values
+  .cl-modal.is-opened
+    .cl-modal-dialog(role='document')
+      form.cl-modal-content
+        .cl-modal-header.cl-flex-row
+          .col-flex
+            h1.cl-title Logo Iguauto
+          .col-flex.text-right
+            p.-user-title Olá John Doe
+            p johndoe@connectlead.com.br | (11) 99877-1234
+        .cl-modal-body
+          .cl-modal-block
+            h2.cl-title.mb-2 Novo Agendamento
+            .cl-flex-row
+              .input-field
+                input(type='text' value='Mobi Way 1.4 - 2017/18 | OEN-1234 | 32.000 km' readonly)
+            .cl-flex-row
+              .input-field
+                select._select2(name='agendamento-oficina')
+                  option(value='' disabled selected) Selecione a oficina
+                  option(value='Ipsum') Ipsum
+                  option(value='Amet') Amet
+                  option(value='Consectetur') Consectetur
+              .input-field
+                select._select2(name='agendamento-consultor')
+                  option(value='' disabled selected) Selecione o consultor
+                  option(value='Ipsum') Ipsum
+                  option(value='Amet') Amet
+                  option(value='Consectetur') Consectetur
+              .input-field
+                select._select2(name='agendamento-servico')
+                  option(value='' disabled selected) Selecione o serviço
+                  option(value='Ipsum') Ipsum
+                  option(value='Amet') Amet
+                  option(value='Consectetur') Consectetur
+          .cl-modal-block
+            h3.cl-title.mb-2 Escolha o melhor dia e horário
+            .cl-flex-row
+              .input-field
+                input._datepicker(name='agendamento-dia' type='text' placeholder='Dia do Agendamento' data-date-start-date='+0d' data-date-end-date=false data-date-dates-disabled=[])
+              .input-field
+                input._timepicker(name='agendamento-horario' type='text' placeholder='Horário do Agendamento')
+          .cl-modal-block
+            label
+              input.cl-checkbox(name='agendamento-acordo-de-regras' type='checkbox')
+              span Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore possimus odio repudiandae incidunt? Error laborum, labore repellat repellendus commodi impedit.
+        .cl-modal-actions
+          .cl-flex
+            input.cl-btn.-grey-block(type='submit' value='Agendar')

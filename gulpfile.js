@@ -72,6 +72,26 @@ gulp.task('vendorcopy', function() {
       'node_modules/font-awesome/**/fonts/*'
   ]).pipe(gulp.dest('dist/vendor/font-awesome/'))
 
+  // Select 2
+  gulp.src([
+    'node_modules/select2/dist/**/select2.min.css',
+    'node_modules/select2/dist/**/select2.min.js',
+    'node_modules/select2/dist/**/pt-BR.js'
+  ]).pipe(gulp.dest('dist/vendor/select2/'))
+
+  // Bootstrap Datapicker
+  gulp.src([
+    'node_modules/bootstrap-datepicker/dist/**/bootstrap-datepicker.min.css',
+    'node_modules/bootstrap-datepicker/dist/**/bootstrap-datepicker.min.js',
+    'node_modules/bootstrap-datepicker/dist/**/bootstrap-datepicker.pt-BR.min.js'
+  ]).pipe(gulp.dest('dist/vendor/bootstrap-datapicker/'))
+
+  // Bootstrap Timepicker
+  gulp.src([
+    'node_modules/bootstrap-timepicker/**/bootstrap-timepicker.min.css',
+    'node_modules/bootstrap-timepicker/**/bootstrap-timepicker.min.js'
+  ]).pipe(gulp.dest('dist/vendor/bootstrap-timepicker/'))
+
 });
 
 // Vendor Sass Build

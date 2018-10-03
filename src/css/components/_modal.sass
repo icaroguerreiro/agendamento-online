@@ -1,0 +1,37 @@
+.cl-modal
+  position: fixed
+  overflow: auto
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(0,0,0,.5)
+  padding: 0 1rem
+  .cl-modal-dialog
+    width: 100%
+    max-width: 800px
+    margin: 1.75rem auto
+    background: #fff
+    border-radius: 3px
+    box-shadow: 2px 2px 10px rgba(0,0,0,.3333)
+    .cl-modal-content
+      > * + *
+        border-top: 1px solid rgba(0,0,0,.3333)
+      .cl-modal-header,
+      .cl-modal-body,
+      .cl-modal-actions
+        padding: 1rem
+        .cl-title, p
+          margin-top: 0
+          margin-bottom: 0
+      .cl-modal-body
+        .cl-modal-block + .cl-modal-block
+          margin-top: 1.5rem
+
+// Datepicker Modal Fix
+.cl-modal .input-field
+  position: relative
+  .datepicker-dropdown
+    position: absolute
+    background: #fff
+    
