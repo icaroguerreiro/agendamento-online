@@ -1,6 +1,7 @@
 // Flex Row
 .cl-flex-row
   display: flex
+  align-items: center
   > *
     flex-grow: 1
   > * + *
@@ -8,12 +9,35 @@
 .cl-flex-row + .cl-flex-row
   margin-top: 15px
 @media (max-width: 768px)
-  .cl-flex-row
+  .cl-flex-row:not(.--flex-only-row)
     flex-direction: column
     > * + *
       margin-left: 0
       margin-top: 15px
 
+// Responsive Ajusts
+@media (max-width: 768px)
+  .-mobile-block
+    display: block
+    width: 100%
+    margin-left: 0!important
+    margin-right: 0!important
+    & + .-mobile-block
+      margin-top: 15px
+
 // Colors
-.-grey-block
+.-bg-grey
   background: $grey
+.-bg-main-color
+  background: $main-color
+
+.-txt-white
+  color: #fff
+.-txt-light-grey
+  color: darken($grey, 33%)
+.-txt-main-color
+  color: $main-color
+
+// Misc
+.-default-anchor
+  font-weight: 600

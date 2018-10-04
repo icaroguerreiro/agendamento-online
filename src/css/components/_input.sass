@@ -1,12 +1,35 @@
 // .input-field Container
-.input-field > *:not(.datepicker)
-  width: 100%!important
-  background: $grey
-  border: none
-  padding: 10px
-  border-radius: 5px
-  &.select2-container
-    padding: 5px
-  .select2-selection
-    background: none
+.input-field
+  position: relative
+  width: 100%
+  .label-placeholder
+    font-size: .65em
+    position: absolute
+    top: 5px
+    left: 10px
+    opacity: .75
+    z-index: 5
+    pointer-events: none
+  & > input,
+  & > .select2-container
+    width: 100%!important
+    background: $grey
     border: none
+    padding: 20px 10px 5px 10px
+    border-radius: 5px
+    border-bottom: 1px solid darken($grey, 15%)
+    transition: .25s ease
+  & > input,
+  & > .select2-container,
+  & > label
+      cursor: pointer
+  & > input:focus,
+  & > .select2-container.select2-container--open
+    border-bottom: 1.5px solid darken($grey, 15%)
+  & > .select2-container
+    padding: 15px 5px 0px 3px
+    .select2-selection
+      background: none
+      border: none
+  .select2-container--default .select2-selection--single .select2-selection__arrow
+    top: 10px

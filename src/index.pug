@@ -1,6 +1,6 @@
 extends html/templates/_just_modal.pug
 block head
-  title Page Title
+  title Agendamento Online
   meta(name='description' content='Page Description')
 block script
   script.
@@ -9,49 +9,142 @@ block script
 block content
   .cl-modal.is-opened
     .cl-modal-dialog(role='document')
-      form.cl-modal-content
-        .cl-modal-header.cl-flex-row
-          .col-flex
-            h1.cl-title Logo Iguauto
-          .col-flex.text-right
-            p.-user-title Olá John Doe
-            p johndoe@connectlead.com.br | (11) 99877-1234
-        .cl-modal-body
-          .cl-modal-block
-            h2.cl-title.mb-2 Novo Agendamento
-            .cl-flex-row
+      .cl-modal-content.data-screen-parent
+        //- Acesso
+        form.cl-screen(data-screen='acesso')
+          .cl-modal-header.cl-flex-row
+            .col-flex
+              h1.cl-title Login
+            .col-flex.text-right.-txt-light-grey
+              p.-user-title Agendamento Online
+          .cl-modal-body
+            .cl-modal-block
+              h3.cl-title.mb-2 Dados de Acesso
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Usuário
+                  input(name='usuario-login' type='text' placeholder='Telefone, CPF ou CNPJ')
+                .input-field
+                  span.label-placeholder Senha
+                  input(name='senha-login' type='password' placeholder='●●●●●●●●●●')
+              .cl-flex-row
+                a.-txt-main-color.-default-anchor(href='#') Esqueci a minha senha
+          .cl-modal-actions.cl-flex-row
+            .col-flex.-mobile-block
+              a.cl-btn.-cl-btn-main.-mobile-block(href='#') Acessar
+            .col-flex.-mobile-block.text-right
+              a.-txt-main-color.-default-anchor(href='#' data-screen-target='cadastro') Criar Conta
+        //- Cadastro
+        form.cl-screen(data-screen='cadastro')
+          .cl-modal-header.cl-flex-row
+            .col-flex
+              h1.cl-title Cadastro
+            .col-flex.text-right.-txt-light-grey
+              p.-user-title Agendamento Online
+          .cl-modal-body
+            .cl-modal-block
+              .cl-flex-row
+                h2.-title-call.text-center Faça agora o seu agendamento em poucos passos
+              .cl-flex-row
+                h3.cl-title.mb-2 Dados de Cadastro
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Nome
+                  input(name='cadastro-nome' type='text' placeholder='Nome Completo')
+                .input-field
+                  span.label-placeholder Nr. do Documento
+                  input(name='cadastro-cpf-cnpj' type='text' placeholder='CPF ou CNPJ')
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Email
+                  input(name='cadastro-email' type='text' placeholder='Email Válido')
+                .input-field
+                  span.label-placeholder Telefone
+                  input(name='cadastro-cpf-cnpj' type='text' placeholder='(__) _____-____')
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Senha
+                  input(name='senha-login' type='password' placeholder='●●●●●●●●●●')
+                .input-field
+                  span.label-placeholder Confirmar Senha
+                  input(name='senha-login' type='password' placeholder='●●●●●●●●●●' onpaste='return false;')
+          .cl-modal-actions.cl-flex-row
+            .col-flex.-mobile-block
+              a.cl-btn.-cl-btn-main.-mobile-block(href='#') Cadastrar
+            .col-flex.-mobile-block.text-right
+              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Já possuo uma conta
+        //- Formulário Simples
+        form.cl-screen.is-active(data-screen='formulario-simples')
+          .cl-modal-header.cl-flex-row
+            .col-flex
+              h1.cl-title Novo Agendamento
+            .col-flex.text-right.-txt-light-grey
+              p.-user-title Olá John Doe
+              p johndoe@connectlead.com.br | (11) 99877-1234
+          .cl-modal-body
+            .cl-modal-block
+              h3.cl-title.mb-2 Informações Gerais
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Veículo
+                  input(type='text' value='Mobi Way 1.4 - 2017/18 | OEN-1234 | 32.000 km' readonly)
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Oficina
+                  select._select2(name='agendamento-oficina')
+                    option(value='' disabled selected) ...
+                    option(value='Ipsum') Ipsum
+                    option(value='Amet') Amet
+                    option(value='Consectetur') Consectetur
+                .input-field
+                  span.label-placeholder Consultor
+                  select._select2(name='agendamento-consultor')
+                    option(value='' disabled selected) ...
+                    option(value='Ipsum') Ipsum
+                    option(value='Amet') Amet
+                    option(value='Consectetur') Consectetur
+                .input-field
+                  span.label-placeholder Serviço
+                  select._select2(name='agendamento-servico')
+                    option(value='' disabled selected) ...
+                    option(value='Ipsum') Ipsum
+                    option(value='Amet') Amet
+                    option(value='Consectetur') Consectetur
+            .cl-modal-block
+              h3.cl-title.mb-2 Dia e horário
+              .cl-flex-row
+                .input-field
+                  span.label-placeholder Dia do Agendamento
+                  input._datepicker(name='agendamento-dia' type='text' placeholder='DD/MM/YYYY' data-date-start-date='+0d' data-date-end-date=false data-date-dates-disabled=[])
+                .input-field
+                  span.label-placeholder Horário do Agendamento
+                  input._timepicker(name='agendamento-horario' type='text' placeholder='Horário do Agendamento')
+            .cl-modal-block
               .input-field
-                input(type='text' value='Mobi Way 1.4 - 2017/18 | OEN-1234 | 32.000 km' readonly)
-            .cl-flex-row
-              .input-field
-                select._select2(name='agendamento-oficina')
-                  option(value='' disabled selected) Selecione a oficina
-                  option(value='Ipsum') Ipsum
-                  option(value='Amet') Amet
-                  option(value='Consectetur') Consectetur
-              .input-field
-                select._select2(name='agendamento-consultor')
-                  option(value='' disabled selected) Selecione o consultor
-                  option(value='Ipsum') Ipsum
-                  option(value='Amet') Amet
-                  option(value='Consectetur') Consectetur
-              .input-field
-                select._select2(name='agendamento-servico')
-                  option(value='' disabled selected) Selecione o serviço
-                  option(value='Ipsum') Ipsum
-                  option(value='Amet') Amet
-                  option(value='Consectetur') Consectetur
-          .cl-modal-block
-            h3.cl-title.mb-2 Escolha o melhor dia e horário
-            .cl-flex-row
-              .input-field
-                input._datepicker(name='agendamento-dia' type='text' placeholder='Dia do Agendamento' data-date-start-date='+0d' data-date-end-date=false data-date-dates-disabled=[])
-              .input-field
-                input._timepicker(name='agendamento-horario' type='text' placeholder='Horário do Agendamento')
-          .cl-modal-block
-            label
-              input.cl-checkbox(name='agendamento-acordo-de-regras' type='checkbox')
-              span Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore possimus odio repudiandae incidunt? Error laborum, labore repellat repellendus commodi impedit.
-        .cl-modal-actions
-          .cl-flex
-            input.cl-btn.-grey-block(type='submit' value='Agendar')
+                label.cl-flex-row.--flex-only-row
+                  input.cl-checkbox(name='agendamento-acordo-de-regras' type='checkbox')
+                  span Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore possimus odio repudiandae incidunt? Error laborum, labore repellat repellendus commodi impedit.
+          .cl-modal-actions.cl-flex-row
+            .col-flex.-mobile-block
+              input.cl-btn.-cl-btn-main.-mobile-block(type='submit' value='Agendar')
+              input.cl-btn.-cl-btn-grey.-mobile-block(type='button' value='Cancelar')
+            .col-flex.-mobile-block.text-right
+              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Sair
+        //- Lista de Veículos
+        form.cl-screen(data-screen='meus-veiculos')
+          .cl-modal-header.cl-flex-row
+            .col-flex
+              h1.cl-title Meus Veículos
+            .col-flex.text-right.-txt-light-grey
+              p.-user-title Olá John Doe
+              p johndoe@connectlead.com.br | (11) 99877-1234
+          .cl-modal-body
+            .cl-modal-block
+              h3.cl-title.mb-2 Listagem para Agendamento
+              .cl-flex-row
+                div#_datatable
+          .cl-modal-actions.cl-flex-row
+            .col-flex.-mobile-block
+              a.cl-btn.-cl-btn-main.-mobile-block(href='#') Acessar
+            .col-flex.-mobile-block.text-right
+              a.-txt-main-color.-default-anchor(href='#' data-screen-target='cadastro') Criar Conta

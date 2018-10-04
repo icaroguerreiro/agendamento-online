@@ -92,6 +92,13 @@ gulp.task('vendorcopy', function() {
     'node_modules/bootstrap-timepicker/**/bootstrap-timepicker.min.js'
   ]).pipe(gulp.dest('dist/vendor/bootstrap-timepicker/'))
 
+  // Datatables
+  gulp.src([
+    'node_modules/datatables/media/**/jquery.dataTables.min.css',
+    'node_modules/datatables/media/**/jquery.dataTables.min.js',
+    'node_modules/datatables/media/**/images/*'
+  ]).pipe(gulp.dest('dist/vendor/datatables/'))
+
 });
 
 // Vendor Sass Build

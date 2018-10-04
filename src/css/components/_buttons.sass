@@ -4,3 +4,22 @@
   border-radius: 5px
   min-width: 150px
   cursor: pointer
+  transition: .25s ease
+  display: inline-block
+  text-align: center
+  &.-cl-btn-main
+    background: $main-color
+    color: #fff
+    &:hover
+      background: darken($main-color, 10%)
+  &.-cl-btn-additional
+    background: adjust-hue($main-color, 180%)
+    color: #fff
+    &:hover
+      background: adjust-hue(darken($main-color, 10%), 180%)
+  &.-cl-btn-grey
+    background: $grey
+    &:hover
+      background: darken($grey, 10%)
+  & + .cl-btn
+    margin-left: 10px
