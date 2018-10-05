@@ -1,0 +1,32 @@
+._cl-datatable
+  margin: 1rem 0 0 0
+  ._datatable
+    margin: 1rem 0
+    border-bottom: none!important
+  .dataTables_filter
+    display: none
+  table tr
+    td:first-child
+      padding-left: 5px
+    td:last-child
+      padding-right: 0
+    td
+      border-bottom: 1px solid darken($grey,10%)
+  ._cl-datatable-pagenation
+    a
+      padding: 6px 9px
+      border-radius: 3px
+      background: $grey
+      transition: .25s ease
+      & + a
+        margin-left: 5px
+      &:hover
+        background: darken($grey, 10%)
+    .current
+      background: $main-color
+      color: #fff
+      cursor: default
+      &:hover
+        background: $main-color
+    span
+      margin: 0 5px

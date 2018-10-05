@@ -19,7 +19,7 @@ gulp.task('sass', function() {
   return gulp.src('src/css/**/[!_]*.sass')
     .pipe(bulksass())
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/css/'))
@@ -39,7 +39,7 @@ gulp.task('scripts', function() {
   return gulp.src('src/js/**/[!_]*.js')
     .pipe(sourcemaps.init())
     .pipe(concat('all.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/js/'))
     .pipe(browsersync.stream());
