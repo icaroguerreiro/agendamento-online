@@ -25,11 +25,11 @@ block content
                 h3.cl-title.mb-2 Dados de Cadastro
               .cl-flex-row
                 .input-field
-                  span.label-placeholder Nome
-                  input(name='cadastro-nome' type='text' placeholder='Nome Completo')
-                .input-field
                   span.label-placeholder Nr. do Documento
                   input(name='cadastro-cpf-cnpj' type='text' placeholder='CPF ou CNPJ')
+                .input-field
+                  span.label-placeholder Nome
+                  input(name='cadastro-nome' type='text' placeholder='Nome Completo')
               .cl-flex-row
                 .input-field
                   span.label-placeholder Email
@@ -41,7 +41,7 @@ block content
             .col-flex.-mobile-block
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Cadastrar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Já possuo uma conta
+              a.cl-btn.-cl-btn-secondary(href='#' data-screen-target='acesso') Já possuo uma conta
         //- Acesso
         form.cl-screen(data-screen='acesso')
           .cl-modal-header.cl-flex-row
@@ -63,7 +63,7 @@ block content
             .col-flex.-mobile-block
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Acessar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.-default-anchor(href='#' data-screen-target='cadastro') Criar Conta
+              a.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Criar Conta
         //- Agendar Veículo
         form.cl-screen(data-screen='agendar-veiculo')
           .cl-modal-header.cl-flex-row
@@ -74,7 +74,7 @@ block content
               p johndoe@connectlead.com.br | (11) 99877-1234
           .cl-modal-body
             .cl-modal-block
-              h3.cl-title.mb-2 Veículo
+              h3.cl-title.mb-2 Informações do Veículo
               .cl-flex-row
                 .input-field
                   span.label-placeholder Veículo
@@ -109,7 +109,11 @@ block content
                   input._datepicker(name='agendamento-dia' type='text' placeholder='DD/MM/YYYY' data-date-start-date='+0d' data-date-end-date=false data-date-dates-disabled=[])
                 .input-field
                   span.label-placeholder Horário do Agendamento
-                  input._timepicker(name='agendamento-horario' type='text' placeholder='Horário do Agendamento')
+                  select._select2(name='agendamento-horario')
+                    option(value='' disabled selected) ...
+                    option(value='14_00') 14:00
+                    option(value='16_00') 16:00
+                    option(value='17_30') 17:30
             .cl-modal-block
               .input-field
                 label.cl-flex-row.--flex-only-row
@@ -120,7 +124,7 @@ block content
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Agendar
               a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Sair
+              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
         //- Lista de Veículos
         form.cl-screen(data-screen='meus-veiculos')
           .cl-modal-header.cl-flex-row
@@ -137,8 +141,8 @@ block content
                   .cl-_datatable-search.-mobile-block(data-dt-placeholder='Veículo, Placa...')
                     .input-field.-mobile-block
                       .label-placeholder.-mobile-block Busca
-                  .col-flex.text-right.-mobile-block
-                    a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
+                  //- .col-flex.text-right.-mobile-block
+                  //-   a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
                 table._datatable.-dt-veiculos
                   thead.-hide
                     tr
@@ -162,41 +166,41 @@ block content
                         {  nome : 'Strada 1.6 (2017/18)',
                           placa : 'IHS-8787',
                           km : '11.600 km' },
-                        {  nome : 'Mobi Way 1.4 (2017/18)',
-                          placa : 'OEN-5437',
+                        {  nome : 'Palio (2017/18)',
+                          placa : 'KJD-3489',
                           km : '13.240 km' },
-                        {  nome : 'Argo 1.0 (2018/19)',
-                          placa : 'EAE-5437',
+                        {  nome : 'CrossFox (2017/18)',
+                          placa : 'FIE-4323',
                           km : '13.240 km' },
-                        {  nome : 'Cronos 1.4 (2016/17)',
-                          placa : 'DKI-9989',
+                        {  nome : 'Siena (2016/17)',
+                          placa : 'DVG-1123',
                           km : '9.459 km' },
-                        {  nome : 'Strada 1.6 (2017/18)',
-                          placa : 'IHS-8787',
+                        {  nome : 'Celta (2014/15)',
+                          placa : 'KFD-4323',
                           km : '11.600 km' },
-                        {  nome : 'Mobi Way 1.4 (2017/18)',
-                          placa : 'OEN-5437',
+                        {  nome : 'Voyage (2015/16)',
+                          placa : 'JSD-4342',
                           km : '13.240 km' },
-                        {  nome : 'Argo 1.0 (2018/19)',
-                          placa : 'EAE-5437',
+                        {  nome : 'HB20 (2018/19)',
+                          placa : 'FDF-4324',
                           km : '13.240 km' },
-                        {  nome : 'Cronos 1.4 (2016/17)',
-                          placa : 'DKI-9989',
+                        {  nome : 'Corsa Sedan (2016/17)',
+                          placa : 'OPO-5569',
                           km : '9.459 km' },
-                        {  nome : 'Strada 1.6 (2017/18)',
-                          placa : 'IHS-8787',
+                        {  nome : 'Onix (2015/16)',
+                          placa : 'WLJ-8884',
                           km : '11.600 km' },
-                        {  nome : 'Mobi Way 1.4 (2017/18)',
-                          placa : 'OEN-5437',
+                        {  nome : 'Sandero (2017/18)',
+                          placa : 'OIO-8414',
                           km : '13.240 km' },
-                        {  nome : 'Argo 1.0 (2018/19)',
-                          placa : 'EAE-5437',
+                        {  nome : 'Fiesta (2018/19)',
+                          placa : 'OFI-5288',
                           km : '13.240 km' },
-                        {  nome : 'Cronos 1.4 (2016/17)',
-                          placa : 'DKI-9989',
+                        {  nome : 'Cobalt (2017/18)',
+                          placa : 'MNX-4511',
                           km : '9.459 km' },
-                        {  nome : 'Strada 1.6 (2017/18)',
-                          placa : 'IHS-8787',
+                        {  nome : 'Ka 1.0 (2015/16)',
+                          placa : 'FHH-1289',
                           km : '11.600 km' }
                       ]
                     each veiculo in veiculos
@@ -213,7 +217,7 @@ block content
             .col-flex.-mobile-block
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Sair
+              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
         //- Cadastrar Veículo (e Agendar)
         form.cl-screen(data-screen='cadastrar-veiculo')
           .cl-modal-header.cl-flex-row
@@ -224,11 +228,11 @@ block content
               p johndoe@connectlead.com.br | (11) 99877-1234
           .cl-modal-body
             .cl-modal-block
-              h3.cl-title.mb-2 Veículo
+              h3.cl-title.mb-2 Informações do Veículo
               .cl-flex-row
                 .input-field
                   span.label-placeholder Modelo
-                  input(type='text' placeholder='Insira o Modelo')
+                  input(type='text' placeholder='Ex: Modelo 1.0')
               .cl-flex-row
                 .input-field
                   span.label-placeholder Ano de Fabricação
@@ -279,7 +283,11 @@ block content
                   input._datepicker(name='agendamento-dia' type='text' placeholder='DD/MM/YYYY' data-date-start-date='+0d' data-date-end-date=false data-date-dates-disabled=[])
                 .input-field
                   span.label-placeholder Horário do Agendamento
-                  input._timepicker(name='agendamento-horario' type='text' placeholder='Horário do Agendamento')
+                  select._select2(name='agendamento-horario')
+                    option(value='' disabled selected) ...
+                    option(value='14_00') 14:00
+                    option(value='16_00') 16:00
+                    option(value='17_30') 17:30
             .cl-modal-block
               .input-field
                 label.cl-flex-row.--flex-only-row
@@ -290,7 +298,7 @@ block content
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Agendar
               a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Sair
+              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
         //- Estou com Problemas
         form.cl-screen(data-screen='estou-com-problemas')
           .cl-modal-header.cl-flex-row
@@ -306,7 +314,7 @@ block content
             .col-flex.-mobile-block
               a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.-default-anchor(href='#' data-screen-target='acesso') Sair
+              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
         .cl-modal-helpers.text-right
           a(href='#' data-screen-target='estou-com-problemas') Estou com Problemas
           

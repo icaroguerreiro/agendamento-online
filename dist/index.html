@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/sanitize/sanitize.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-datapicker/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="vendor/datatables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Agendamento Online</title>
+    <meta name="description" content="Page Description">
+  </head>
+  <body class="default">
+    <div id="page-content">
+      <div class="cl-modal is-opened">
+        <div class="cl-modal-dialog" role="document">
+          <div class="cl-modal-content data-screen-parent">
+            <form class="cl-screen is-active" data-screen="cadastro">
+              <div class="cl-modal-header cl-flex-row">
+                <div class="col-flex">
+                  <h1 class="cl-title">Cadastro</h1>
+                </div>
+                <div class="col-flex text-right -txt-light-grey">
+                  <p class="-user-title">Agendamento Online</p>
+                </div>
+              </div>
+              <div class="cl-modal-body">
+                <div class="cl-modal-block">
+                  <div class="cl-flex-row">
+                    <h2 class="-title-call text-center">Faça agora o seu agendamento em poucos passos</h2>
+                  </div>
+                  <div class="cl-flex-row">
+                    <h3 class="cl-title mb-2">Dados de Cadastro</h3>
+                  </div>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Nr. do Documento</span>
+                      <input name="cadastro-cpf-cnpj" type="text" placeholder="CPF ou CNPJ">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Nome</span>
+                      <input name="cadastro-nome" type="text" placeholder="Nome Completo">
+                    </div>
+                  </div>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Email</span>
+                      <input name="cadastro-email" type="text" placeholder="Email Válido">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Telefone</span>
+                      <input name="cadastro-cpf-cnpj" type="text" placeholder="(__) _____-____">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cl-modal-actions cl-flex-row">
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Cadastrar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-secondary" href="#" data-screen-target="acesso">Já possuo uma conta</a></div>
+              </div>
+            </form>
+            <form class="cl-screen" data-screen="acesso">
+              <div class="cl-modal-header cl-flex-row">
+                <div class="col-flex">
+                  <h1 class="cl-title">Login</h1>
+                </div>
+                <div class="col-flex text-right -txt-light-grey">
+                  <p class="-user-title">Agendamento Online</p>
+                </div>
+              </div>
+              <div class="cl-modal-body">
+                <div class="cl-modal-block">
+                  <h3 class="cl-title mb-2">Dados de Acesso</h3>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Usuário</span>
+                      <input name="cpf-cnpj-login" type="text" placeholder="CPF ou CNPJ">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Telefone</span>
+                      <input name="telefone-login" type="text" placeholder="(__) _____-____">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cl-modal-actions cl-flex-row">
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Acessar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Criar Conta</a></div>
+              </div>
+            </form>
+            <form class="cl-screen" data-screen="agendar-veiculo">
+              <div class="cl-modal-header cl-flex-row">
+                <div class="col-flex">
+                  <h1 class="cl-title">Novo Agendamento</h1>
+                </div>
+                <div class="col-flex text-right -txt-light-grey">
+                  <p class="-user-title">Olá John Doe</p>
+                  <p>johndoe@connectlead.com.br | (11) 99877-1234</p>
+                </div>
+              </div>
+              <div class="cl-modal-body">
+                <div class="cl-modal-block">
+                  <h3 class="cl-title mb-2">Informações do Veículo</h3>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Veículo</span>
+                      <input type="text" value="Mobi Way 1.4 - 2017/18 | OEN-1234 | 32.000 km" readonly>
+                    </div>
+                  </div>
+                </div>
+                <div class="cl-modal-block">
+                  <h3 class="cl-title mb-2">Informações do Agendamento</h3>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Oficina</span>
+                      <select class="_select2" name="agendamento-oficina">
+                        <option value="" disabled selected>...</option>
+                        <option value="Ipsum">Ipsum</option>
+                        <option value="Amet">Amet</option>
+                        <option value="Consectetur">Consectetur</option>
+                      </select>
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Consultor</span>
+                      <select class="_select2" name="agendamento-consultor">
+                        <option value="" disabled selected>...</option>
+                        <option value="Ipsum">Ipsum</option>
+                        <option value="Amet">Amet</option>
+                        <option value="Consectetur">Consectetur</option>
+                      </select>
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Serviço</span>
+                      <select class="_select2" name="agendamento-servico">
+                        <option value="" disabled selected>...</option>
+                        <option value="Ipsum">Ipsum</option>
+                        <option value="Amet">Amet</option>
+                        <option value="Consectetur">Consectetur</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Dia do Agendamento</span>
+                      <input class="_datepicker" name="agendamento-dia" type="text" placeholder="DD/MM/YYYY" data-date-start-date="+0d" data-date-dates-disabled="[]">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Horário do Agendamento</span>
+                      <select class="_select2" name="agendamento-horario">
+                        <option value="" disabled selected>...</option>
+                        <option value="14_00">14:00</option>
+                        <option value="16_00">16:00</option>
+                        <option value="17_30">17:30</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="cl-modal-block">
+                  <div class="input-field">
+                    <label class="cl-flex-row --flex-only-row">
+                      <input class="cl-checkbox" name="agendamento-acordo-de-regras" type="checkbox"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore possimus odio repudiandae incidunt? Error laborum, labore repellat repellendus commodi impedit.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="cl-modal-actions cl-flex-row">
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Agendar</a><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+              </div>
+            </form>
+            <form class="cl-screen" data-screen="meus-veiculos">
+              <div class="cl-modal-header cl-flex-row">
+                <div class="col-flex">
+                  <h1 class="cl-title">Meus Veículos</h1>
+                </div>
+                <div class="col-flex text-right -txt-light-grey">
+                  <p class="-user-title">Olá John Doe</p>
+                  <p>johndoe@connectlead.com.br | (11) 99877-1234</p>
+                </div>
+              </div>
+              <div class="cl-modal-body">
+                <div class="cl-modal-block">
+                  <h3 class="cl-title mb-2">Listagem para Agendamento</h3>
+                  <div class="_cl-datatable">
+                    <div class="_cl-datatable-actions cl-flex-row">
+                      <div class="cl-_datatable-search -mobile-block" data-dt-placeholder="Veículo, Placa...">
+                        <div class="input-field -mobile-block">
+                          <div class="label-placeholder -mobile-block">Busca</div>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="_datatable -dt-veiculos">
+                      <thead class="-hide">
+                        <tr>
+                          <th>Veículo</th>
+                          <th>Placa</th>
+                          <th>Quilometragem</th>
+                          <th><span class="-hide">Ações</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Mobi Way 1.4 (2017/18)</td>
+                          <td>OEN-5437</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Argo 1.0 (2018/19)</td>
+                          <td>EAE-5437</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Cronos 1.4 (2016/17)</td>
+                          <td>DKI-9989</td>
+                          <td>9.459 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Strada 1.6 (2017/18)</td>
+                          <td>IHS-8787</td>
+                          <td>11.600 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Palio (2017/18)</td>
+                          <td>KJD-3489</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>CrossFox (2017/18)</td>
+                          <td>FIE-4323</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Siena (2016/17)</td>
+                          <td>DVG-1123</td>
+                          <td>9.459 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Celta (2014/15)</td>
+                          <td>KFD-4323</td>
+                          <td>11.600 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Voyage (2015/16)</td>
+                          <td>JSD-4342</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>HB20 (2018/19)</td>
+                          <td>FDF-4324</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Corsa Sedan (2016/17)</td>
+                          <td>OPO-5569</td>
+                          <td>9.459 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Onix (2015/16)</td>
+                          <td>WLJ-8884</td>
+                          <td>11.600 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Sandero (2017/18)</td>
+                          <td>OIO-8414</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Fiesta (2018/19)</td>
+                          <td>OFI-5288</td>
+                          <td>13.240 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Cobalt (2017/18)</td>
+                          <td>MNX-4511</td>
+                          <td>9.459 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                        <tr>
+                          <td>Ka 1.0 (2015/16)</td>
+                          <td>FHH-1289</td>
+                          <td>11.600 km</td>
+                          <td class="text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="agendar-veiculo">Agendar</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="_cl-datatable-info cl-flex-row">
+                      <div class="_cl-datatable-entries cl-flex-row"></div>
+                      <div class="_cl-datatable-pagenation text-right"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cl-modal-actions cl-flex-row">
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="cadastrar-veiculo">Cadastrar Veículo</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+              </div>
+            </form>
+            <form class="cl-screen" data-screen="cadastrar-veiculo">
+              <div class="cl-modal-header cl-flex-row">
+                <div class="col-flex">
+                  <h1 class="cl-title">Cadastrar Veículo</h1>
+                </div>
+                <div class="col-flex text-right -txt-light-grey">
+                  <p class="-user-title">Olá John Doe</p>
+                  <p>johndoe@connectlead.com.br | (11) 99877-1234</p>
+                </div>
+              </div>
+              <div class="cl-modal-body">
+                <div class="cl-modal-block">
+                  <h3 class="cl-title mb-2">Informações do Veículo</h3>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Modelo</span>
+                      <input type="text" placeholder="Ex: Modelo 1.0">
+                    </div>
+                  </div>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Ano de Fabricação</span>
+                      <input type="text" name="ano-fabricacao" placeholder="____">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Ano do Modelo</span>
+                      <input type="text" name="ano-modelo" placeholder="____">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Placa</span>
+                      <input type="text" name="placa" placeholder="___-____">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Quilometragem</span>
+                      <input type="text" name="quilometragem" placeholder="Km Atual">
+                    </div>
+                  </div>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Chassi</span>
+                      <input type="text" placeholder="_________________">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Data da Compra</span>
+                      <input class="_datepicker" name="data-compra" type="text" placeholder="DD/MM/YYYY" data-date-end-date="+0d" data-date-dates-disabled="[]">
+                    </div>
+                  </div>
+                </div>
+                <div class="cl-modal-block">
+                  <h3 class="cl-title mb-2">Informações do Agendamento</h3>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Oficina</span>
+                      <select class="_select2" name="agendamento-oficina">
+                        <option value="" disabled selected>...</option>
+                        <option value="Ipsum">Ipsum</option>
+                        <option value="Amet">Amet</option>
+                        <option value="Consectetur">Consectetur</option>
+                      </select>
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Consultor</span>
+                      <select class="_select2" name="agendamento-consultor">
+                        <option value="" disabled selected>...</option>
+                        <option value="Ipsum">Ipsum</option>
+                        <option value="Amet">Amet</option>
+                        <option value="Consectetur">Consectetur</option>
+                      </select>
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Serviço</span>
+                      <select class="_select2" name="agendamento-servico">
+                        <option value="" disabled selected>...</option>
+                        <option value="Ipsum">Ipsum</option>
+                        <option value="Amet">Amet</option>
+                        <option value="Consectetur">Consectetur</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="cl-flex-row">
+                    <div class="input-field"><span class="label-placeholder">Dia do Agendamento</span>
+                      <input class="_datepicker" name="agendamento-dia" type="text" placeholder="DD/MM/YYYY" data-date-start-date="+0d" data-date-dates-disabled="[]">
+                    </div>
+                    <div class="input-field"><span class="label-placeholder">Horário do Agendamento</span>
+                      <select class="_select2" name="agendamento-horario">
+                        <option value="" disabled selected>...</option>
+                        <option value="14_00">14:00</option>
+                        <option value="16_00">16:00</option>
+                        <option value="17_30">17:30</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="cl-modal-block">
+                  <div class="input-field">
+                    <label class="cl-flex-row --flex-only-row">
+                      <input class="cl-checkbox" name="agendamento-acordo-de-regras" type="checkbox"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore possimus odio repudiandae incidunt? Error laborum, labore repellat repellendus commodi impedit.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="cl-modal-actions cl-flex-row">
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Agendar</a><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+              </div>
+            </form>
+            <form class="cl-screen" data-screen="estou-com-problemas">
+              <div class="cl-modal-header cl-flex-row">
+                <div class="col-flex">
+                  <h1 class="cl-title">Estou com Problemas</h1>
+                </div>
+                <div class="col-flex text-right -txt-light-grey">
+                  <p class="-user-title">Agendamento Online</p>
+                </div>
+              </div>
+              <div class="cl-modal-body">
+                <div class="cl-modal-block">
+                  <div class="cl-flex-row">
+                    <h2 class="-title-call text-center">Em caso de problemas ao acessar o sistema entre em contato com nosso atendimento ao cliente - 0800 123 0987 das 8h às 18h de segunda a sexta.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="cl-modal-actions cl-flex-row">
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+              </div>
+            </form>
+            <div class="cl-modal-helpers text-right"><a href="#" data-screen-target="estou-com-problemas">Estou com Problemas</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/select2/js/select2.min.js"></script>
+    <script src="vendor/select2/js/i18n/pt-BR.js"></script>
+    <script src="vendor/bootstrap-datapicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="vendor/bootstrap-datapicker/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/all.js"></script>
+    <script></script>
+  </body>
+</html>
