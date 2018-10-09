@@ -11,7 +11,7 @@ block content
     .cl-modal-dialog(role='document')
       .cl-modal-content.data-screen-parent
         //- Cadastro
-        form.cl-screen(data-screen='cadastro')
+        form.cl-screen.is-active(data-screen='cadastro')
           .cl-modal-header.cl-flex-row
             .col-flex
               h1.cl-title Cadastro
@@ -221,7 +221,7 @@ block content
             .col-flex.-mobile-block.text-right
               a.cl-btn.-cl-btn-grey(href='#' data-screen-target='cadastro') Sair
         //- Cadastrar Veículo (e Agendar)
-        form.cl-screen.is-active(data-screen='cadastrar-veiculo')
+        form.cl-screen(data-screen='cadastrar-veiculo')
           .cl-modal-header.cl-flex-row
             .col-flex
               h1.cl-title Cadastrar Veículo
