@@ -21,7 +21,7 @@
       <div class="cl-modal is-opened">
         <div class="cl-modal-dialog" role="document">
           <div class="cl-modal-content data-screen-parent">
-            <form class="cl-screen is-active" data-screen="cadastro">
+            <form class="cl-screen" data-screen="cadastro">
               <div class="cl-modal-header cl-flex-row">
                 <div class="col-flex">
                   <h1 class="cl-title">Cadastro</h1>
@@ -54,11 +54,13 @@
                       <input name="cadastro-cpf-cnpj" type="text" placeholder="(__) _____-____">
                     </div>
                   </div>
+                  <div class="cl-flex-row">
+                    <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Cadastrar</a></div>
+                  </div>
                 </div>
               </div>
               <div class="cl-modal-actions cl-flex-row">
-                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Cadastrar</a></div>
-                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-secondary" href="#" data-screen-target="acesso">Já possuo uma conta</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-secondary -mobile-block" href="#" data-screen-target="acesso">Cancelar</a><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="acesso">Já sou cadastrado</a></div>
               </div>
             </form>
             <form class="cl-screen" data-screen="acesso">
@@ -79,13 +81,12 @@
                     </div>
                     <div class="input-field"><span class="label-placeholder">Telefone</span>
                       <input name="telefone-login" type="text" placeholder="(__) _____-____">
-                    </div>
+                    </div><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Acessar</a>
                   </div>
                 </div>
               </div>
               <div class="cl-modal-actions cl-flex-row">
-                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Acessar</a></div>
-                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Criar Conta</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-secondary" href="#" data-screen-target="estou-com-problemas">Estou com Problemas</a><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="cadastro">Voltar</a></div>
               </div>
             </form>
             <form class="cl-screen" data-screen="agendar-veiculo">
@@ -158,8 +159,8 @@
                 </div>
               </div>
               <div class="cl-modal-actions cl-flex-row">
-                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Agendar</a><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
-                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Agendar</a><a class="cl-btn -cl-btn-secondary -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="cadastro">Sair</a></div>
               </div>
             </form>
             <form class="cl-screen" data-screen="meus-veiculos">
@@ -182,6 +183,7 @@
                           <div class="label-placeholder -mobile-block">Busca</div>
                         </div>
                       </div>
+                      <div class="col-flex text-right -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="cadastrar-veiculo">Cadastrar Veículo</a></div>
                     </div>
                     <table class="_datatable -dt-veiculos">
                       <thead class="-hide">
@@ -299,11 +301,10 @@
                 </div>
               </div>
               <div class="cl-modal-actions cl-flex-row">
-                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="cadastrar-veiculo">Cadastrar Veículo</a></div>
-                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="cadastro">Sair</a></div>
               </div>
             </form>
-            <form class="cl-screen" data-screen="cadastrar-veiculo">
+            <form class="cl-screen is-active" data-screen="cadastrar-veiculo">
               <div class="cl-modal-header cl-flex-row">
                 <div class="col-flex">
                   <h1 class="cl-title">Cadastrar Veículo</h1>
@@ -395,8 +396,8 @@
                 </div>
               </div>
               <div class="cl-modal-actions cl-flex-row">
-                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Agendar</a><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
-                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-main -mobile-block" href="#" data-screen-target="meus-veiculos">Agendar</a><a class="cl-btn -cl-btn-secondary -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="cadastro">Sair</a></div>
               </div>
             </form>
             <form class="cl-screen" data-screen="estou-com-problemas">
@@ -416,11 +417,9 @@
                 </div>
               </div>
               <div class="cl-modal-actions cl-flex-row">
-                <div class="col-flex -mobile-block"><a class="cl-btn -cl-btn-grey -mobile-block" href="#" data-screen-target="meus-veiculos">Cancelar</a></div>
-                <div class="col-flex -mobile-block text-right"><a class="-txt-main-color cl-btn -cl-btn-secondary" href="#" data-screen-target="cadastro">Sair</a></div>
+                <div class="col-flex -mobile-block text-right"><a class="cl-btn -cl-btn-grey" href="#" data-screen-target="cadastro">Voltar</a></div>
               </div>
             </form>
-            <div class="cl-modal-helpers text-right"><a href="#" data-screen-target="estou-com-problemas">Estou com Problemas</a></div>
           </div>
         </div>
       </div>

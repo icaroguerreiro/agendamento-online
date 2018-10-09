@@ -156,8 +156,16 @@ input:placeholder-shown {
 
 .cl-btn.-cl-btn-secondary:hover {
   color: #fff;
-  background: #198e7b;
-  box-shadow: inset 0px 0px 0px 1px #198e7b;
+  background: #bfbfbf;
+  box-shadow: inset 0px 0px 0px 1px #bfbfbf;
+}
+
+.cl-btn.-cl-btn-grey {
+  background: #d9d9d9;
+}
+
+.cl-btn.-cl-btn-grey:hover {
+  background: #bfbfbf;
 }
 
 .datepicker table tr td.active.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled.disabled, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover.active, .datepicker table tr td.active.disabled:hover.disabled, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active.disabled:hover[disabled], .datepicker table tr td.active.disabled[disabled], .datepicker table tr td.active:active, .datepicker table tr td.active:hover, .datepicker table tr td.active:hover.active, .datepicker table tr td.active:hover.disabled, .datepicker table tr td.active:hover:active, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active:hover[disabled], .datepicker table tr td.active[disabled] {
@@ -307,8 +315,8 @@ input:placeholder-shown {
   border-radius: 3px;
 }
 
-.cl-modal .cl-modal-dialog .cl-modal-content .cl-screen > * + * {
-  border-top: 1px solid #d9d9d9;
+.cl-modal .cl-modal-dialog .cl-modal-content .cl-screen .cl-modal-header {
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .cl-modal .cl-modal-dialog .cl-modal-content .cl-screen .cl-modal-header,
@@ -330,10 +338,13 @@ input:placeholder-shown {
   margin-top: 1.5rem;
 }
 
+.cl-modal .cl-modal-dialog .cl-modal-content .cl-screen .cl-modal-actions {
+  background: #f2f2f2;
+}
+
 .cl-modal .cl-modal-dialog .cl-modal-helpers {
   font-size: .75em;
   padding: 1rem 1.25rem 1rem 1.25rem;
-  border-top: 1px solid #d9d9d9;
 }
 
 .cl-modal .input-field {

@@ -11,7 +11,7 @@ block content
     .cl-modal-dialog(role='document')
       .cl-modal-content.data-screen-parent
         //- Cadastro
-        form.cl-screen.is-active(data-screen='cadastro')
+        form.cl-screen(data-screen='cadastro')
           .cl-modal-header.cl-flex-row
             .col-flex
               h1.cl-title Cadastro
@@ -37,11 +37,13 @@ block content
                 .input-field
                   span.label-placeholder Telefone
                   input(name='cadastro-cpf-cnpj' type='text' placeholder='(__) _____-____')
+              .cl-flex-row
+                .col-flex.-mobile-block.text-right
+                  a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Cadastrar
           .cl-modal-actions.cl-flex-row
-            .col-flex.-mobile-block
-              a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Cadastrar
             .col-flex.-mobile-block.text-right
-              a.cl-btn.-cl-btn-secondary(href='#' data-screen-target='acesso') Já possuo uma conta
+              a.cl-btn.-cl-btn-secondary.-mobile-block(href='#' data-screen-target='acesso') Cancelar
+              a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='acesso') Já sou cadastrado
         //- Acesso
         form.cl-screen(data-screen='acesso')
           .cl-modal-header.cl-flex-row
@@ -59,11 +61,11 @@ block content
                 .input-field
                   span.label-placeholder Telefone
                   input(name='telefone-login' type='text' placeholder='(__) _____-____')
+                a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Acessar
           .cl-modal-actions.cl-flex-row
-            .col-flex.-mobile-block
-              a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Acessar
             .col-flex.-mobile-block.text-right
-              a.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Criar Conta
+              a.cl-btn.-cl-btn-secondary(href='#' data-screen-target='estou-com-problemas') Estou com Problemas
+              a.cl-btn.-cl-btn-grey(href='#' data-screen-target='cadastro') Voltar
         //- Agendar Veículo
         form.cl-screen(data-screen='agendar-veiculo')
           .cl-modal-header.cl-flex-row
@@ -122,9 +124,9 @@ block content
           .cl-modal-actions.cl-flex-row
             .col-flex.-mobile-block
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Agendar
-              a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
+              a.cl-btn.-cl-btn-secondary.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
+              a.cl-btn.-cl-btn-grey(href='#' data-screen-target='cadastro') Sair
         //- Lista de Veículos
         form.cl-screen(data-screen='meus-veiculos')
           .cl-modal-header.cl-flex-row
@@ -141,8 +143,8 @@ block content
                   .cl-_datatable-search.-mobile-block(data-dt-placeholder='Veículo, Placa...')
                     .input-field.-mobile-block
                       .label-placeholder.-mobile-block Busca
-                  //- .col-flex.text-right.-mobile-block
-                  //-   a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
+                  .col-flex.text-right.-mobile-block
+                    a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
                 table._datatable.-dt-veiculos
                   thead.-hide
                     tr
@@ -214,12 +216,12 @@ block content
                   ._cl-datatable-entries.cl-flex-row
                   ._cl-datatable-pagenation.text-right
           .cl-modal-actions.cl-flex-row
-            .col-flex.-mobile-block
-              a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
+            //- .col-flex.-mobile-block
+            //-   a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='cadastrar-veiculo') Cadastrar Veículo
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
+              a.cl-btn.-cl-btn-grey(href='#' data-screen-target='cadastro') Sair
         //- Cadastrar Veículo (e Agendar)
-        form.cl-screen(data-screen='cadastrar-veiculo')
+        form.cl-screen.is-active(data-screen='cadastrar-veiculo')
           .cl-modal-header.cl-flex-row
             .col-flex
               h1.cl-title Cadastrar Veículo
@@ -296,9 +298,9 @@ block content
           .cl-modal-actions.cl-flex-row
             .col-flex.-mobile-block
               a.cl-btn.-cl-btn-main.-mobile-block(href='#' data-screen-target='meus-veiculos') Agendar
-              a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
+              a.cl-btn.-cl-btn-secondary.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
+              a.cl-btn.-cl-btn-grey(href='#' data-screen-target='cadastro') Sair
         //- Estou com Problemas
         form.cl-screen(data-screen='estou-com-problemas')
           .cl-modal-header.cl-flex-row
@@ -311,10 +313,8 @@ block content
               .cl-flex-row
                 h2.-title-call.text-center Em caso de problemas ao acessar o sistema entre em contato com nosso atendimento ao cliente - 0800 123 0987 das 8h às 18h de segunda a sexta.
           .cl-modal-actions.cl-flex-row
-            .col-flex.-mobile-block
-              a.cl-btn.-cl-btn-grey.-mobile-block(href='#' data-screen-target='meus-veiculos') Cancelar
             .col-flex.-mobile-block.text-right
-              a.-txt-main-color.cl-btn.-cl-btn-secondary(href='#' data-screen-target='cadastro') Sair
-        .cl-modal-helpers.text-right
-          a(href='#' data-screen-target='estou-com-problemas') Estou com Problemas
+              a.cl-btn.-cl-btn-grey(href='#' data-screen-target='cadastro') Voltar
+        //- .cl-modal-helpers.text-right
+        //-   a(href='#' data-screen-target='estou-com-problemas') Estou com Problemas
           
